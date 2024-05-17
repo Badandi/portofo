@@ -24,6 +24,7 @@
       font-size: 25px;
       
      }
+        
      #v {
       
       border-radius: 10px;
@@ -33,19 +34,24 @@
       background-color: grey;
      }
      img{
+      
       background-color:white ;
       border-radius: 50%;
       color: black;
-      width: 200px;
-      height: 200px;
+      width: 300px;
+      height: auto;
+      transition:transform 0.3s;
      }
+        img:hover{
+            transform: scale(1.1);
+        }
 
     </style>
 </head>
 <body>
 
   <header><h1 id="h1">Bienvenu dans ma page de presentation personnel </h1></header>
-  <img id="im" src="https://drive.google.com/file/d/16WlnKbrbGTlatGs0llnDiBIq4IfbqnZU/view?usp=sharing" alt="MA_photo">
+  <img id="im" src="https://drive.google.com/file/d/16WlnKbrbGTlatGs0llnDiBIq4IfbqnZU/view?usp=sharing" alt="MA_photo" onmouseover="changeImage()" onmouseout="resetImage()">
 
   <div id="v"><ul>
     <li>BADANDI</li>
@@ -65,10 +71,15 @@
     </footer>
 
   <script >
-    let h1= document.getElementById('im');
+    
     let a=document.getElementById('h1').innerHTML='BIENVENU DANS MA PAGE DE PRESENTATION PERSONNEL';
-    
-    
+
+    function changeImage(){
+        document.getElementById('im').src='"https://drive.google.com/file/d/16WlnKbrbGTlatGs0llnDiBIq4IfbqnZU/view?usp=sharing';
+    }
+      function resetImage(){
+          document.getEmentById('im').src='"https://drive.google.com/file/d/16WlnKbrbGTlatGs0llnDiBIq4IfbqnZU/view?usp=sharing';
+      }    
   
   </script>   
 </body>
